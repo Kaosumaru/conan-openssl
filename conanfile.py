@@ -91,8 +91,8 @@ class OpenSSLConan(ConanFile):
                 lib_path = self.deps_cpp_info.lib_paths[0] + "/" + self.deps_cpp_info.libs[0] + ".lib"  # Concrete lib file
             else:
                 lib_path = self.deps_cpp_info.lib_paths[0]  # Just path, linux will find the right file
-            config_options_string += ' --with-zlib-include="%s"' % include_path
-            config_options_string += ' --with-zlib-lib="%s"' % lib_path
+            config_options_string += ' --with-zlib-include="\"%s\""' % include_path
+            config_options_string += ' --with-zlib-lib="\"%s\""' % lib_path
             self.output.warn("=====> Options: %s" % config_options_string)
 
         for option_name in self.options.values.fields:
